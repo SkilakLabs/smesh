@@ -1,0 +1,133 @@
+SKILAK MESH LICENSE AGREEMENT
+
+Version 2026-09-30
+
+Skilak Mesh ("the Software") is proprietary software owned by Skilak LLC
+("Skilak"). The Software includes the smesh command-line tool, its
+background service, its installers and install scripts, its documentation, and
+any updates Skilak provides.
+
+By downloading, installing, or using the Software, you agree to this Agreement.
+If you do not agree, do not download, install, or use it.
+
+1. Definitions
+
+- "Personal Non-Commercial Use" means use by an individual, on devices that
+  individual owns or controls, for their own personal projects, learning, or
+  hobbies. It excludes any use in connection with a business, an employer, a
+  client, freelance, contract, or consulting work, or any activity that
+  generates or is intended to generate revenue or other commercial benefit,
+  directly or indirectly.
+- "Organization" means any entity other than an individual, including a
+  corporation, limited liability company, partnership, sole proprietorship,
+  non-profit, educational institution, or government body, and their
+  affiliates. An individual using the Software for or on behalf of an
+  Organization, or in the course of work for one, is use by that Organization.
+- "Company License" means a separate written license from Skilak that
+  permits use beyond Personal Non-Commercial Use.
+
+2. Free license for personal, non-commercial use
+
+Subject to this Agreement, Skilak grants you a free, personal, non-exclusive,
+non-transferable, non-sublicensable, revocable license to install and run the
+Software in the form Skilak distributes it, solely for Personal Non-Commercial
+Use.
+
+3. Use by Organizations and commercial use
+
+Every other use of the Software requires a Company License, except the
+evaluation below. This includes any use by, for, or on behalf of an
+Organization, and any commercial use. To request one, use the request form at
+https://skilak.ai or email hello@skilak.ai.
+
+30-day evaluation. An Organization may install and run the Software for up to
+thirty (30) days from its first installation, solely to evaluate whether to
+obtain a Company License and not for production work. The evaluation is free and
+needs no approval. When it ends, the Organization must either obtain a Company
+License or stop using the Software and delete all copies. Each Organization may
+evaluate the Software once, unless Skilak agrees otherwise in writing.
+
+Skilak may, at its sole discretion, grant a no-fee Company License to an
+Organization with fewer than ten (10) people, counting employees and
+contractors. No such license exists unless Skilak grants it in writing.
+
+4. Restrictions
+
+Unless a Company License expressly allows it, you may not:
+
+- copy the Software, except as needed to install and run it and to keep one
+  backup copy;
+- modify, adapt, translate, or create derivative works of the Software;
+- reverse engineer, decompile, or disassemble the Software, except to the
+  extent applicable law expressly permits despite this restriction;
+- distribute, sell, rent, lease, lend, sublicense, or otherwise make the
+  Software available to anyone else. Point others to Skilak's official download
+  page instead;
+- operate the Software as a hosted or managed service, or for or on behalf of
+  any third party;
+- remove or alter any proprietary notice in the Software; or
+- use the Software to conduct, facilitate, or conceal unlawful activity;
+  to defeat security or access controls on systems you are not authorized to
+  test; to process data you have no lawful basis or authorization to process;
+  or in violation of export control or sanctions laws.
+
+5. Ownership
+
+The Software is licensed, not sold. Skilak and its licensors keep all rights,
+title, and interest in the Software. All rights not expressly granted are
+reserved. If you send Skilak feedback, Skilak may use it without obligation to
+you.
+
+6. Third-party components
+
+The Software includes third-party open-source components. Each is licensed
+under its own terms, and those terms are included with the Software. Nothing in
+this Agreement limits your rights under those licenses for those components.
+
+7. Your data and your responsibilities
+
+The Software runs on your computer. It does not send telemetry to Skilak.
+Requests go to the AI providers you configure, under your own agreements with
+those providers. You are responsible for your provider accounts, credentials,
+policy settings, and compliance obligations.
+
+Detection is not perfect. The Software can miss sensitive data or flag harmless
+data. It is not a de-identification control. Skilak does not guarantee that it
+identifies or redacts all Protected Health Information or other regulated data.
+Skilak is not a HIPAA compliance certification provider, is not a Business
+Associate, and does not sign Business Associate Agreements.
+
+8. Updates and termination
+
+Skilak may release updates, and each version is licensed under the Agreement
+included with it. This license ends automatically if you breach this
+Agreement. When it ends, stop using the Software and delete all copies.
+Sections 4 through 11 survive termination.
+
+9. Disclaimer of warranties
+
+THE SOFTWARE IS PROVIDED "AS IS" AND "WITH ALL FAULTS." SKILAK DISCLAIMS ALL
+WARRANTIES, EXPRESS OR IMPLIED, INCLUDING IMPLIED WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE, AND NON-INFRINGEMENT.
+
+10. Limitation of liability
+
+IN NO EVENT WILL SKILAK BE LIABLE FOR ANY INDIRECT, INCIDENTAL, SPECIAL, OR
+CONSEQUENTIAL DAMAGES. SKILAK'S TOTAL CUMULATIVE LIABILITY WILL NOT EXCEED THE
+AMOUNT YOU PAID SKILAK FOR THE SOFTWARE DURING THE TWELVE (12) MONTHS BEFORE THE
+CLAIM, OR $0 IF THE SOFTWARE WAS PROVIDED FREE OF CHARGE.
+
+11. Governing law and general terms
+
+This Agreement is governed by the laws of the State of Missouri, without regard
+to its conflict of laws principles. The state and federal courts located in
+Missouri have exclusive jurisdiction.
+
+Where a signed Company License exists, it controls over this Agreement. This
+Agreement is the entire agreement about the free license. Skilak may revise
+it for future versions; a revision does not change the terms of a version you
+already have.
+
+Questions: hello@skilak.ai.
+
+Skilak Mesh™ and SkilakMesh™ are trademarks of Skilak LLC.
