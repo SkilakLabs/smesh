@@ -44,7 +44,9 @@ Windows setup EXE are held and are not part of the first release route.
 After downloads open, choose macOS on the download page and download
 `install.sh`. The script selects the native CLI archive for Apple Silicon or
 Intel, verifies it before activation, and prints the setup command to run.
-Use your usual account, not root.
+Use your usual account, not root. The installer adds `~/.local/bin` to your
+shell startup file when needed. Follow its printed `export PATH` line in the
+current terminal, or open a new terminal, then run `smesh init`.
 
 Homebrew will be an additional route for Apple Silicon only after its separate
 channel passes qualification. Intel Homebrew remains held. Neither script
@@ -79,9 +81,12 @@ The installer downloads and checks the native package automatically, then
 prints the setup command to run. Use your usual account, not root. It installs
 a systemd user service for background operation.
 
-If `smesh` is not on PATH, use the exact launcher path printed by the
-installer. It does not edit shell startup files. A working systemd user session
-and the root-owned system `setpriv` executable are required for automatic
+The installer adds its launcher directory to your shell startup file when
+needed. Follow its printed `export PATH` line in the current terminal, or open
+a new terminal. `--no-modify-path` leaves shell files unchanged; `--confirm-path`
+is accepted for compatibility and has no effect. `--verbose` shows extra details.
+A working systemd user session and the root-owned system `setpriv` executable
+are required for automatic
 startup; installation alone does not prove login/restart behavior.
 
 ## First run with a verified native package
@@ -92,9 +97,12 @@ smesh status
 smesh client list
 ```
 
-Guided setup presents the terms and license, selects policy and file handling,
-previews supported client changes, and starts and health-checks the background
-service. Use `smesh start` only for later recovery if the service is stopped.
+Guided setup has five steps: Welcome, Terms and license, How will you use Mesh?,
+Settings, and AI clients. Type `y` to accept the four legal documents. Choose
+free personal use, a 30-day work evaluation, or use under a Company License.
+Press Enter for Balanced protection and blocked attachments, or `c` to customize.
+Choose whether to connect each detected client, then review the summary and
+press Enter to save and start. Setup health-checks the background service. Use `smesh start` only for later recovery if the service is stopped.
 On the Mac DMG route, opening the installed app starts the same guided flow.
 
 Choose only the clients you intend to route. The automatic adapters are Claude
@@ -183,13 +191,20 @@ item instead of deleting unfamiliar files manually.
 | Symptom | Next step |
 |---|---|
 | Download is unavailable | Try the download page again shortly. |
-| `smesh` is not found | Use the launcher's printed path; on Windows open a new terminal after PATH changes; for the Mac app use **Command-Line Tools…**. |
+| `smesh` is not found | Follow the printed PATH line or open a new terminal; for the Mac app use **Command-Line Tools…**. |
 | Service is unhealthy | Run `smesh doctor` and `smesh logs`; on Linux check the supported user session and setpriv prerequisite; on macOS check login-item approval. |
 | Client is configured but not verified | Fully restart it, check `smesh client protection-state`, and verify the exact client/version using non-sensitive input. A saved route alone is insufficient. |
 | `unknown_provider_alias` | Use the full `/p/openai/v1`, `/p/anthropic`, or reviewed `/p/gemini` path; a bare loopback origin is not a provider route. |
 | Route conflict during pause or uninstall | Review the named setting. Use the documented disconnect conflict choice only after deciding whether to keep the newer route or restore the previous one. |
 | MCP says the lightweight CLI cannot scan | Use a qualified native runtime containing the scanner on macOS or Linux. Windows MCP is unsupported. |
 | Signature, policy, parser, or audit check fails | Stop and resolve the reported failure. Do not disable the check to obtain an allowed result. |
+
+## Report a problem
+
+Run `smesh doctor`, then [open an issue](https://github.com/SkilakLabs/smesh/issues/new/choose)
+with your version, OS, client and steps to reproduce. Review diagnostics for
+personal data before posting. Never paste secrets, prompts or file contents.
+Report vulnerabilities and deliberate bypasses [privately](https://github.com/SkilakLabs/smesh/security/advisories/new).
 
 ## Protection boundary
 
