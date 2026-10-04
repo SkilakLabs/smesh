@@ -22,16 +22,15 @@ relying on it.
 
 ## Choose an install route
 
-The first public release is planned around direct installer scripts. Choose
-your computer on the download page when downloads open; no GitHub account is
-needed. Homebrew is an additional channel with separate qualification.
+Mesh installs with direct installer scripts. Choose your computer on the
+[download page](https://mesh.skilak.ai/download); no GitHub account is needed.
 
-| Platform | Prerequisites | Route after publication |
+| Platform | Prerequisites | Install route |
 |---|---|---|
-| macOS, Apple Silicon (arm64) | macOS 13 or newer | `install.sh`; Homebrew only after that channel is separately qualified |
-| macOS, Intel (x86-64) | macOS 13 or newer | `install.sh`; Intel Homebrew remains on hold |
+| macOS, Apple Silicon (arm64) | macOS 13 or newer | `install.sh` |
+| macOS, Intel (x86-64) | macOS 13 or newer | `install.sh` |
 | Windows, x86-64 | Windows 11; normal logged-in desktop account | `install.ps1` |
-| Linux, x86-64 | Ubuntu 24.04 / glibc 2.39; systemd user session; system-provided `/usr/bin/setpriv` from util-linux | `install.sh`; Homebrew only after that channel is separately qualified |
+| Linux, x86-64 | Ubuntu 24.04 / glibc 2.39; systemd user session; system-provided `/usr/bin/setpriv` from util-linux | `install.sh` |
 
 There is no qualified Linux ARM, Windows ARM, 32-bit, older macOS, or Windows
 MCP package. Other Linux distributions are not qualified merely because an
@@ -41,16 +40,14 @@ Windows setup EXE are held and are not part of the first release route.
 
 ### macOS
 
-After downloads open, choose macOS on the download page and download
-`install.sh`. The script selects the native CLI archive for Apple Silicon or
+Choose macOS on the download page and run `install.sh`. The script selects the native CLI archive for Apple Silicon or
 Intel, verifies it before activation, and prints the setup command to run.
 Use your usual account, not root. The installer adds `~/.local/bin` to your
 shell startup file when needed. Follow its printed `export PATH` line in the
 current terminal, or open a new terminal, then run `smesh init`.
 
-Homebrew will be an additional route for Apple Silicon only after its separate
-channel passes qualification. Intel Homebrew remains held. Neither script
-route installs the held Mac app or DMG.
+The script route installs the command-line tool only; it does not install the
+held Mac app or DMG.
 
 Keep Gatekeeper and quarantine checks enabled. If macOS rejects the package,
 stop and obtain a corrected verified release. Confirm the reported service
@@ -58,7 +55,7 @@ state after setup; installation alone does not prove login or restart behavior.
 
 ### Windows
 
-After downloads open, download `install.ps1` from the Windows route and follow
+Download `install.ps1` from the Windows route and follow
 the reviewed PowerShell command on the download page from your usual desktop
 account. The script verifies the native x86-64 ZIP before activation. The
 setup EXE remains held.
@@ -70,7 +67,7 @@ The native package registers a per-user background task.
 
 ### Linux
 
-After downloads open, download `install.sh` from the Linux route. Open a
+Download `install.sh` from the Linux route. Open a
 terminal in the folder where you saved it and run:
 
 ```sh
@@ -146,13 +143,28 @@ smesh client resume
 
 ### Upgrade
 
-There is no working in-app upgrade or rollback command in the current beta.
-`smesh upgrade check` reports unavailable metadata; `apply` and `rollback`
-refuse. After a higher version is publicly released, use its verified installer
-and the same package channel, then repeat setup/status and client checks.
-Do not overwrite an installed version's files or substitute a development
-build. Follow the release-specific migration instructions before changing
-channels.
+For a verified direct-script installation, check for a public release and apply it:
+
+```sh
+smesh upgrade check
+smesh upgrade apply
+smesh status
+```
+
+`check` fetches the public release manifest. When a newer release exists, it
+prints `smesh upgrade apply` and the installer command for your platform. An offline or failed check exits with code 40; protection keeps
+running. `apply` requires a newer version, verifies the downloaded installer's
+SHA-256 and size, then runs it. The installer verifies its release artifacts,
+keeps settings and connected clients, and restarts a running gateway. A stopped
+gateway stays stopped. Re-running the same installer keeps the existing setup.
+`apply` preserves the install location recorded by the installer and refuses
+configuration or data path overrides that the installer cannot safely carry
+forward.
+
+Keep using your package manager for a package-managed installation. Follow
+release-specific migration instructions before changing channels. Rollback is
+not offered: an older release is not guaranteed to read newer settings or data
+safely.
 
 ### Uninstall
 
@@ -161,14 +173,6 @@ Restore client routes while Mesh is still installed:
 ```sh
 smesh client pause
 smesh uninstall
-```
-
-For Homebrew, let the package manager remove its files after Mesh removes the
-service and restores client routes:
-
-```sh
-smesh uninstall --keep-program-files
-brew uninstall smesh
 ```
 
 Windows also supports **Settings > Apps > Installed apps > Skilak Mesh >
