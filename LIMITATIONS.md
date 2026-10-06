@@ -21,6 +21,13 @@ pilots.
 
 ## Detection tradeoffs
 
+- **History is rechecked after detector upgrades.** Unchanged conversation
+  history reuses its previous protected form only under the same detector
+  revision and policy. An upgrade rescans older history, including records
+  created before revisions were tracked; newly detected values are redacted or
+  blocked under current policy. This can cause a one-time provider prompt-cache
+  miss and cannot retract content already sent to a provider.
+
 - **Classification labels are read from the file, not inferred.** A Microsoft
   sensitivity label is detected by its properties, so it survives renaming and
   translation — but a document that was never labelled carries no signal, and a

@@ -9,6 +9,10 @@ driver's licence numbers, street addresses, and health-plan IDs; labels
 or checksums keep ordinary numbers out.
 Provider responses are relayed without content inspection.
 
+Unchanged conversation history replays its protected form under the same
+detector revision and policy. Detector upgrades rescan older history with
+current protection, which can cause a one-time provider prompt-cache miss.
+
 [Download](https://mesh.skilak.ai/download) ·
 [Documentation](https://skilak.ai/mesh/docs) ·
 [Limitations](LIMITATIONS.md)
